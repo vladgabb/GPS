@@ -1,0 +1,30 @@
+﻿<Window
+    x:Class="MyGIS.SQLResultWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyGIS"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SQLResultWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBlock
+            Width="143"
+            Height="25"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Результат"
+            TextWrapping="Wrap" />
+        <DataGrid
+            x:Name="DataGridResult"
+            Width="742"
+            Height="328"
+            Margin="25,60,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+
+    </Grid>
+</Window>

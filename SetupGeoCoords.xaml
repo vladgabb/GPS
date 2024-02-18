@@ -1,0 +1,53 @@
+﻿<Window
+    x:Class="MyGIS.SetupGeoCoords"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyGIS"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SetupGeoCoords"
+    Width="670"
+    Height="162"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Grid>
+
+        <DataGrid
+            x:Name="pointsBinding"
+            Width="670"
+            Height="51"
+            Margin="0,40,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            CanUserReorderColumns="False"
+            CanUserSortColumns="False" />
+        <StackPanel
+            Width="200"
+            Height="20"
+            Margin="235,107,235,19"
+            Orientation="Horizontal">
+            <Button
+                Width="80"
+                Height="20"
+                Click="Accept_Click"
+                Content="OK"
+                IsDefault="True" />
+            <Button
+                Width="80"
+                Height="20"
+                Margin="40,0,0,0"
+                Content="Отмена"
+                IsCancel="True" />
+        </StackPanel>
+        <Label
+            Width="490"
+            Height="25"
+            Margin="0,10,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Координирование карты в 2-х системах координат (прямоугольная и географическая)" />
+
+    </Grid>
+</Window>

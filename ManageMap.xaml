@@ -1,0 +1,313 @@
+﻿<Page
+    x:Class="MyGIS.ManageMap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:MyGIS"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="ManageMapPage"
+    Title="ManageMap"
+    Width="1200"
+    Height="800"
+    Loaded="ManageMapPage_Loaded"
+    WindowHeight="800"
+    WindowWidth="1200"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:MapViewModel x:Key="MapViewModel" />
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="149*" />
+            <ColumnDefinition Width="888*" />
+            <ColumnDefinition Width="163*" />
+        </Grid.ColumnDefinitions>
+
+        <Frame
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3"
+            Background="MediumAquamarine" />
+
+
+        <Grid>
+            <Label
+                x:Name="NameOfProject"
+                Width="180"
+                Height="40"
+                Content="Название проекта" />
+        </Grid>
+
+        <Grid
+            Grid.RowSpan="3"
+            Grid.Column="0"
+            Margin="0,71,0,14">
+
+
+            <StackPanel Orientation="Vertical">
+
+                <Expander
+                    Width="140"
+                    Margin="0,5"
+                    Header="Слои"
+                    IsExpanded="True">
+
+                    <ScrollViewer>
+                        <StackPanel
+                            x:Name="StackLayers"
+                            Width="110"
+                            Margin="5,2,0,2"
+                            HorizontalAlignment="Left"
+                            Orientation="Vertical">
+
+                            
+
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Expander>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="169*" />
+                <ColumnDefinition Width="187*" />
+                <ColumnDefinition Width="262*" />
+                <ColumnDefinition Width="206*" />
+                <ColumnDefinition Width="206*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.ColumnSpan="6" Background="LightGray" />
+
+            <GroupBox
+                Grid.Column="0"
+                Margin="3,1,5,3"
+                Header="Инструменты">
+
+                <StackPanel Orientation="Horizontal">
+
+                    <StackPanel Margin="5,0" Orientation="Vertical">
+
+                        <Button
+                            Width="30"
+                            Background="Transparent"
+                            BorderBrush="Transparent">
+                            <Image Source="/images/Cursor.png" />
+                        </Button>
+
+                        <TextBlock FontSize="10" Text="Выбор" />
+
+                    </StackPanel>
+
+                    <WrapPanel
+                        Margin="5,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+
+                        <Button
+                            Width="20"
+                            Margin="3,1"
+                            Background="Transparent"
+                            BorderBrush="Transparent">
+                            <Image Source="/images/Info.png" />
+                        </Button>
+
+                        <Button
+                            Width="20"
+                            Margin="3,1"
+                            Background="Transparent"
+                            BorderBrush="Transparent">
+                            <Image Source="/images/Ruler.png" />
+                        </Button>
+
+                        <Button
+                            Width="20"
+                            Margin="3,1"
+                            Background="Transparent"
+                            BorderBrush="Transparent">
+                            <Image Source="/images/Eraser.png" />
+                        </Button>
+
+                        <Button
+                            Width="20"
+                            Margin="3,1"
+                            Background="Transparent"
+                            BorderBrush="Transparent">
+                            <Image Source="/images/Drag.png" />
+                        </Button>
+
+                    </WrapPanel>
+
+                </StackPanel>
+
+            </GroupBox>
+
+            <GroupBox
+                Grid.Column="1"
+                Margin="3,1,5,3"
+                Header="Рисование">
+
+                <WrapPanel
+                    Margin="5,0"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+
+                    <Button
+                        Width="20"
+                        Margin="3,1"
+                        Style="{StaticResource CustomButtonStyle}">
+                        <Border CornerRadius="30">
+                            <Image Source="/images/Line.png" />
+                        </Border>
+                    </Button>
+
+                    <Button
+                        Width="20"
+                        Margin="3,1"
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                        <Image Source="/images/Polyline.png" />
+                    </Button>
+
+                    <Button
+                        Width="20"
+                        Margin="3,1"
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                        <Image Source="/images/Pentagon.png" />
+                    </Button>
+
+                    <Button
+                        Width="20"
+                        Margin="3,1"
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                        <Image Source="/images/Rectangle.png" />
+                    </Button>
+
+                    <Button
+                        Width="20"
+                        Margin="3,1"
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                        <Image Source="/images/Ellipse.png" />
+                    </Button>
+
+                    <Button
+                        Width="20"
+                        Margin="3,1"
+                        Background="Transparent"
+                        BorderBrush="Transparent">
+                        <Image Source="/images/Filled Circle.png" />
+                    </Button>
+
+                </WrapPanel>
+
+            </GroupBox>
+
+            <GroupBox
+                Grid.Column="2"
+                Margin="3,1,5,3"
+                Header="Стили"
+                Visibility="Hidden" />
+
+            <StackPanel
+                Grid.Column="2"
+                Width="70"
+                HorizontalAlignment="Center"
+                Orientation="Vertical">
+
+                <Button
+                    Width="50"
+                    Margin="3,1"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                    <Image Source="/images/Database Administrator.png" />
+                </Button>
+
+                <TextBlock Width="65" Text="SQL-запрос" />
+
+            </StackPanel>
+
+        </Grid>
+
+
+        <Grid
+            Grid.RowSpan="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="0,71,0,14">
+            <Frame BorderBrush="LightSlateGray" BorderThickness="4" />
+
+            <StackPanel
+                Margin="0,0,15,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Panel.ZIndex="3"
+                Background="#fff">
+
+                <Button
+                    x:Name="ZoomInButton"
+                    Width="24"
+                    Height="24"
+                    Margin="5"
+                    Panel.ZIndex="4"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Click="ZoomInButton_Click">
+                    <Image Source="/images/oi-circle-add.png" />
+                </Button>
+
+                <Line Height="5" />
+
+                <Button
+                    x:Name="ZoomOutButton"
+                    Width="24"
+                    Height="24"
+                    Margin="5"
+                    Panel.ZIndex="4"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Click="ZoomOutButton_Click">
+                    <Image Source="/images/oi-circle-subtract.png" />
+                </Button>
+
+            </StackPanel>
+
+            <esri:MapView x:Name="MainMapView" Loaded="MainMapView_Initialized" />
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+
+            <WrapPanel Orientation="Horizontal">
+                <Label />
+                <Label />
+                <Label />
+                <Label />
+            </WrapPanel>
+
+        </Grid>
+
+
+    </Grid>
+
+
+</Page>

@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\minne\.nuget\packages\nlog.config\4.7.15\contentFiles\any\any\NLog.config" />
+    <None Remove="C:\Users\minne\.nuget\packages\nlog.schema\5.2.5\contentFiles\any\any\NLog.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Esri.ArcGISRuntime" Version="200.2.0" />
+    <PackageReference Include="Esri.ArcGISRuntime.WPF" Version="200.2.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+    <PackageReference Include="MySqlConnector" Version="2.2.7" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MapViewModel.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images/bottom_left.png" />
+    <Resource Include="images/bottom_right.png" />
+    <Resource Include="images/top_left.png" />
+    <Resource Include="images/top_right.png" />
+  </ItemGroup>
+
+  <!-- <ItemGroup>
+  <Resource Include="images/" />
+  </ItemGroup> -->
+
+  <ItemGroup>
+  <Resource Include="images/oi-circle-add.png" />
+  <Resource Include="images/oi-circle-subtract.png" />
+  </ItemGroup> 
+
+  <ItemGroup>
+  <Resource Include="images/Cursor.png" />
+  <Resource Include="images/Database Administrator.png" />
+  <Resource Include="images/Drag.png" />
+  <Resource Include="images/Dashed Line.png" />
+  <Resource Include="images/Edit.png" />
+  <Resource Include="images/UnEdit.png" />
+  <Resource Include="images/Ellipse.png" />
+  <Resource Include="images/Eraser.png" />
+  <Resource Include="images/Eye.png" />
+  <Resource Include="images/Filled Circle.png" />
+  <Resource Include="images/Info.png" />
+  <Resource Include="images/Invisible.png" />
+  <Resource Include="images/Line.png" />
+  <Resource Include="images/Pentagon.png" />
+  <Resource Include="images/Polyline.png" />
+  <Resource Include="images/Rectangle.png" />
+  <Resource Include="images/Ruler.png" />
+  <Resource Include="images/Select All.png" />
+  <Resource Include="images/Select None.png" />
+  <Resource Include="images/Enlarge.png" />
+  <Resource Include="images/Rotate.png" />
+
+  </ItemGroup> 
+
+  <ItemGroup>
+    <Folder Include="local\" />
+  </ItemGroup>
+
+  <ItemGroup>
+<Resource Include="images/Save.png" />
+  <Resource Include="images/Save Close.png" />
+  <Resource Include="images/Undo.png" />
+  </ItemGroup> 
+
+</Project>
