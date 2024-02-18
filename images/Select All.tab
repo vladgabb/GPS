@@ -1,0 +1,9 @@
+!table
+!version 800
+!charset WindowsCyrillic
+
+Definition Table
+Type NATIVE Charset "WindowsCyrillic"
+ Fields 2
+  a1a23123 char (254);
+  aaa231242343 char (254);
